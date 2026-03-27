@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Kamil & Hina Khan | Engagement</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Cormorant Garamond', serif;
+background:#0a0a0a;
+color:#f8f8f8;
+overflow-x:hidden;
+scroll-snap-type:y mandatory;
+line-height:1.6;
+}
+
+section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+padding:40px;
+scroll-snap-align:start;
+}
+
+/* Intro - PERFECTLY FIXED */
+#intro{
+position:fixed;
+width:100vw;
+height:100vh;
+background:linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+transition: all 0.8s ease-out;
+}
+
+#intro.exit{
+opacity:0;
+transform:scale(0.95);
+pointer-events:none;
+}
+
+.particle{
+position:absolute;
+width:3px;
+height:3px;
+background:linear-gradient(45deg, #ffd700, #ffed4e);
+border-radius:50%;
+opacity:0.6;
+animation:particleFloat 10s linear infinite;
+box-shadow:0 0 8px rgba(255,215,0,0.4);
+}
+
+.particle:nth-child(2){animation-delay:1s; width:5px; height:5px;}
+.particle:nth-child(3){animation-delay:2s; width:2px; height:2px;}
+.particle:nth-child(4){animation-delay:3s; width:4px; height:4px;}
+.particle:nth-child(5){animation-delay:4s; width:3px; height:3px;}
+
+@keyframes particleFloat{
+0%{transform:translateY(100vh) rotate(0deg) scale(0); opacity:0;}
+20%{opacity:1;}
+80%{opacity:1;}
+100%{transform:translateY(-20vh) rotate(360deg) scale(1); opacity:0;}
+}
+
+#intro h1{
+font-family:'Great Vibes', cursive;
+font-size:clamp(4rem, 12vw, 9rem);
+background:linear-gradient(135deg, #ffd700, #ffed4e, #fff176);
+background-clip:text;
+-webkit-background-clip:text;
+animation:glowPulse 2.5s ease-in-out infinite alternate, float3D 5s ease-in-out infinite;
+position:relative;
+}
+
+#intro h1::after{
+content:'*';
+position:absolute;
+bottom:-20px;
+left:50%;
+transform:translateX(-50%);
+font-size:2rem;
+color:#ffd700;
+animation:float3D 5s ease-in-out infinite reverse;
+}
+
+@keyframes glowPulse{
+0%{filter:drop-shadow(0 0 10px rgba(255,215,0,0.6));}
+100%{filter:drop-shadow(0 0 25px rgba(255,215,0,0.9));}
+}
+
+@keyframes float3D{
+0%,100%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+}
+
+.enter-btn{
+margin-top:40px;
+padding:16px 60px;
+border:2px solid #ffd700;
+color:#ffd700;
+cursor:pointer;
+font-size:clamp(1.1rem, 3vw, 1.3rem);
+font-weight:600;
+letter-spacing:2px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+border-radius:50px;
+transition:all 0.5s ease;
+position:relative;
+overflow:hidden;
+}
+
+.enter-btn:hover{
+background:linear-gradient(145deg, #ffd700, #ffed4e);
+color:#1a1a2e;
+box-shadow:0 0 40px rgba(255,215,0,0.4);
+transform:translateY(-3px) scale(1.05);
+}
+
+/* Hero Section */
+.hero{
+background: 
+linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1523895669676-70b2474c6b5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+top:0;left:0;right:0;bottom:0;
+background:linear-gradient(135deg, rgba(255,215,0,0.1) 0%, transparent 50%);
+}
+
+.content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:0 20px;
+animation:fadeInUp 2s ease-out 1s both;
+}
+
+@keyframes fadeInUp{
+from{opacity:0; transform:translateY(50px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.monogram{
+font-family:'Great Vibes', cursive;
+font-size:clamp(6rem, 18vw, 12rem);
+background:linear-gradient(135deg, #ffd700, #ffed4e);
+-webkit-background-clip:text;
+background-clip:text;
+margin-bottom:20px;
+letter-spacing:0.1em;
+filter:drop-shadow(0 10px 30px rgba(255,215,0,0.4));
+animation:monogramGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes monogramGlow{
+0%{filter:drop-shadow(0 10px 30px rgba(255,215,0,0.3));}
+100%{filter:drop-shadow(0 20px 40px rgba(255,215,0,0.5));}
+}
+
+h1{
+font-family:'Great Vibes', cursive;
+font-size:clamp(3.5rem, 8vw, 5rem);
+background:linear-gradient(135deg, #ffd700, #fff, #ffd700);
+-webkit-background-clip:text;
+background-clip:text;
+line-height:1.3;
+margin:20px 0;
+filter:drop-shadow(0 5px 20px rgba(255,215,0,0.3));
+}
+
+.subtitle{
+font-family:'Playfair Display', serif;
+font-size:clamp(1.4rem, 4vw, 2rem);
+font-weight:400;
+margin:25px 0;
+letter-spacing:6px;
+color:#e8e8e8;
+text-transform:uppercase;
+}
+
+.date{
+font-family:'Playfair Display', serif;
+font-size:clamp(1.8rem, 5vw, 2.5rem);
+font-weight:600;
+margin:30px 0;
+letter-spacing:8px;
+color:#ffd700;
+text-shadow:0 2px 10px rgba(255,215,0,0.4);
+}
+
+.venue{
+font-size:clamp(1.1rem, 3vw, 1.4rem);
+color:#d4d4d4;
+margin:15px 0;
+font-weight:300;
+letter-spacing:3px;
+}
+
+.quote{
+margin:35px 0;
+font-size:clamp(1.1rem, 3vw, 1.4rem);
+font-style:italic;
+color:#ffed4e;
+font-weight:300;
+padding:25px 40px;
+background:rgba(255,215,0,0.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,215,0,0.2);
+border-radius:20px;
+position:relative;
+}
+
+.quote::before{
+content:'"';
+font-size:4rem;
+color:#ffd700;
+position:absolute;
+top:-10px;
+left:20px;
+opacity:0.7;
+}
+
+.countdown{
+margin:40px 0;
+font-size:clamp(1.4rem, 4vw, 2rem);
+padding:25px 50px;
+border:2px solid rgba(255,215,0,0.3);
+border-radius:25px;
+background:rgba(255,215,0,0.08);
+backdrop-filter:blur(25px);
+box-shadow:0 15px 40px rgba(255,215,0,0.2);
+letter-spacing:4px;
+font-weight:500;
+display:inline-block;
+}
+
+.btn{
+margin:20px 10px;
+padding:16px 40px;
+border:2px solid #ffd700;
+color:#ffd700;
+text-decoration:none;
+display:inline-block;
+font-size:1.1rem;
+font-weight:500;
+letter-spacing:2px;
+backdrop-filter:blur(20px);
+border-radius:50px;
+transition:all 0.4s ease;
+text-transform:uppercase;
+}
+
+.btn:hover{
+background:#ffd700;
+color:#1a1a2e;
+box-shadow:0 10px 30px rgba(255,215,0,0.4);
+transform:translateY(-2px);
+}
+
+.rsvp-card{
+margin-top:50px;
+padding:50px 40px;
+border-radius:30px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(30px);
+box-shadow:0 25px 60px rgba(255,215,0,0.15);
+border:1px solid rgba(255,215,0,0.2);
+max-width:500px;
+}
+
+.rsvp-card h3{
+margin-bottom:30px;
+font-family:'Great Vibes', cursive;
+font-size:2.5rem;
+color:#ffd700;
+}
+
+/* Location Section */
+.location{
+background: 
+linear-gradient(rgba(26,26,46,0.9), rgba(15,15,35,0.95)),
+url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+}
+
+/* Couple Section */
+.couple{
+background: 
+linear-gradient(rgba(26,26,46,0.9), rgba(15,15,35,0.95)),
+url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80') center/cover;
+}
+
+.couple-content{
+max-width:800px;
+padding:40px;
+}
+
+.couple-content h1{
+font-size:clamp(4rem,12vw,7rem);
+margin-bottom:30px;
+background:linear-gradient(135deg, #ffd700, #ffed4e);
+-webkit-background-clip:text;
+background-clip:text;
+}
+
+/* Scroll Indicator */
+.scroll-indicator{
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+z-index:10;
+display:flex;
+flex-direction:column;
+align-items:center;
+color:rgba(255,215,0,0.8);
+font-size:14px;
+letter-spacing:2px;
+animation:scrollBounce 2s infinite;
+}
+
+.scroll-arrow{
+font-size:1.8rem;
+margin-top:5px;
+animation:scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce{
+0%,20%,50%,80%,100%{transform:translateY(0);}
+40%{transform:translateY(10px);}
+60%{transform:translateY(5px);}
+}
+
+/* Responsive */
+@media (max-width:768px){
+.content,.couple-content{max-width:100%; padding:20px;}
+.rsvp-card{padding:30px 20px;}
+section{padding:20px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Intro Screen -->
+<div id="intro">
+<div class="particle" style="left:15%;"></div>
+<div class="particle" style="left:30%;"></div>
+<div class="particle" style="left:50%;"></div>
+<div class="particle" style="left:70%;"></div>
+<div class="particle" style="left:85%;"></div>
+
+<h1>You're Invited</h1>
+<button class="enter-btn" onclick="enterSite()">
+Enter Celebration
+</button>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+<div class="content">
+<div class="monogram">H & K</div>
+<h1>Muhammad Kamil <br>&<br> Hina Khan</h1>
+<div class="subtitle">Engagement Ceremony</div>
+<div class="date"><i class="fas fa-calendar-alt"></i> 4 • APRIL • 2026</div>
+<div class="venue"><i class="fas fa-map-marker-alt"></i> The Moment Ballroom</div>
+<div class="quote">A promise today, a lifetime forever.</div>
+<div class="countdown" id="countdown"></div>
+</div>
+<div class="scroll-indicator">
+<span>Scroll</span>
+<div class="scroll-arrow">v</div>
+</div>
+</section>
+
+<!-- Couple -->
+<section class="couple">
+<div class="couple-content">
+<h1>We Are Engaged!</h1>
+<div style="font-size:clamp(1.3rem,4vw,1.8rem); color:#ffed4e; margin:30px 0; letter-spacing:2px; font-style:italic;">
+Your presence will make our special day complete
+</div>
+<a href="#location" class="btn" style="font-size:1.2rem; padding:20px 60px;">
+RSVP Now
+</a>
+</div>
+</section>
+
+<!-- Location -->
+<section id="location" class="location">
+<div class="content">
+<h1>Join Our Celebration</h1>
+<div class="rsvp-card">
+<h3>Confirmation</h3>
+<a href="https://share.google/8e1uP17fG9smDe5zU" target="_blank" class="btn">
+<i class="fas fa-map"></i> View Venue
+</a>
+<br><br>
+<a href="https://wa.me/923482987242" target="_blank" class="btn">
+<i class="fab fa-whatsapp"></i> Confirm Now
+</a>
+</div>
+</div>
+</section>
+
+<script>
+function enterSite(){
+document.getElementById('intro').classList.add('exit');
+document.body.style.overflow = 'auto';
+setTimeout(()=>{
+document.getElementById('intro').style.display = 'none';
+document.body.scrollSnapType = 'y mandatory';
+}, 800);
+}
+
+const eventDate = new Date("2026-04-04T00:00:00").getTime();
+
+function updateCountdown(){
+const now = new Date().getTime();
+const distance = eventDate - now;
+
+if(distance < 0){
+document.getElementById("countdown").innerHTML = "The Day Has Arrived!";
+return;
+}
+
+const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+document.getElementById("countdown").innerHTML = 
+days + "d " + hours + "h " + minutes + "m";
+}
+
+setInterval(updateCountdown, 30000);
+updateCountdown();
+</script>
+
+</body>
+</html>
